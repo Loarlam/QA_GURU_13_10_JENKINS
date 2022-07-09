@@ -39,75 +39,75 @@ public class PageOfRegistrationForm {
         return this;
     }
 
-    @Step("Вводим \"{userName}\" в поле \"First Name\"")
+    @Step("Вводим {userName} в поле \"First Name\"")
     public PageOfRegistrationForm settingFirstName(String userName) {
         name.setValue(userName);
         return this;
     }
 
-    @Step("Вводим \"{userSurname}\" в поле \"Second Name\"")
+    @Step("Вводим {userSurname} в поле \"Second Name\"")
     public PageOfRegistrationForm settingSurname(String userSurname) {
         surname.setValue(userSurname);
         return this;
     }
 
-    @Step("Вводим \"{userEmail}\" в поле \"Email\"")
+    @Step("Вводим {userEmail} в поле \"Email\"")
     public PageOfRegistrationForm settingEmail(String userEmail) {
         email.setValue(userEmail);
         return this;
     }
 
-    @Step("Выбираем \"{userGender}\" близ \"Gender\"")
+    @Step("Выбираем {userGender} близ \"Gender\"")
     public PageOfRegistrationForm settingGender(int userGender) {
         $(String.format("#gender-radio-%s", userGender)).sendKeys(" ");
         return this;
     }
 
-    @Step("Вводим \"{userMobileNumber}\" в поле \"Mobile Number\"")
+    @Step("Вводим {userMobileNumber} в поле \"Mobile Number\"")
     public PageOfRegistrationForm settingMobileNumber(String userMobileNumber) {
         mobileNumber.setValue(userMobileNumber);
         return this;
     }
 
-    @Step("Вводим \"{dayOfBirth} {monthOfBirth} {yearOfBirth}\" в поле даты")
+    @Step("Вводим {dayOfBirth} {monthOfBirth} {yearOfBirth} в поле даты")
     public PageOfRegistrationForm settingDateOfBirth(int dayOfBirth, String monthOfBirth, int yearOfBirth) {
         dateOfBirthField.click();
         calenderComponent.settingDateOfBirthInCalender(dayOfBirth, monthOfBirth, yearOfBirth);
         return this;
     }
 
-    @Step("Вводим \"{userSubject}\" в поле близ \"Subject\"")
+    @Step("Вводим {userSubject} в поле близ \"Subject\"")
     public PageOfRegistrationForm settingSubject(String userSubject) {
         subject.sendKeys(userSubject);
         subject.sendKeys(Keys.RETURN);
         return this;
     }
 
-    @Step("Выбираем \"{userHobbies}\" близ \"Hobbies\"")
+    @Step("Выбираем {userHobbies} близ \"Hobbies\"")
     public PageOfRegistrationForm settingHobbies(int userHobbies) {
         $(String.format("#hobbies-checkbox-%s", userHobbies)).sendKeys(" ");
         return this;
     }
 
-    @Step("Загружаем \"{userPicture}\" через \"Выберите файл\"")
+    @Step("Загружаем {userPicture} через \"Выберите файл\"")
     public PageOfRegistrationForm uploadingPicture(String userPicture) {
         $("#uploadPicture").uploadFile(new File(userPicture));
         return this;
     }
 
-    @Step("Вводим \"{userAddress}\" в поле \"Current Address\"")
+    @Step("Вводим {userAddress} в поле \"Current Address\"")
     public PageOfRegistrationForm settingAddress(String userAddress) {
         address.setValue(userAddress);
         return this;
     }
 
-    @Step("Вводим \"{userState}\" в поле \"Select State\"")
+    @Step("Вводим {userState} в поле \"Select State\"")
     public PageOfRegistrationForm selectingState(String userState) {
         state.setValue(userState).sendKeys(Keys.RETURN);
         return this;
     }
 
-    @Step("Вводим \"{userCity}\" в поле \"Select City\"")
+    @Step("Вводим {userCity} в поле \"Select City\"")
     public PageOfRegistrationForm selectingCity(String userCity) {
         city.setValue(userCity).sendKeys(Keys.RETURN);
         return this;
@@ -119,7 +119,7 @@ public class PageOfRegistrationForm {
         return this;
     }
 
-    @Step("Проверяем наличие \"{validateFieldValue}\" в результатах общего вывода")
+    @Step("Проверяем наличие {validateFieldValue} в результатах общего вывода")
     public PageOfRegistrationForm checkingResultFormValues(String validateFieldValue) {
         resultDataFormComponent.checkingResultFormValues(validateFieldValue);
         attachScreenshot();
